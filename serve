@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -o errexit
+
+rake
+cd dist/
+python -m SimpleHTTPServer

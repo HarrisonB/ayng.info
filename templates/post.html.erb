@@ -1,0 +1,15 @@
+<div>
+<div>
+<% if title and date %>
+<span style="font-size:1.6em;display:block"><%= title %></span>
+<span style="display:block"><%= date.strftime("%b %d, %Y") %></span>
+<% elsif title %>
+<span style="font-size:1.6em;display:block"><%= title %></span>
+<% elsif date %>
+<span style="font-size:1.6em;display:block"><%= date.strftime("%b %d, %Y") %></span>
+<% end %>
+</div>
+<div>
+<%= content %>
+</div>
+</div>

@@ -1,0 +1,11 @@
+<span style="font-size:1.6em;display:block"><%= dirname %></span>
+<ul style="list-style:none;padding-left:0">
+<% links.each do |link| %>
+  <li>
+    <% if link.date %>
+    <span style="font-family:monospace;color:gray"><%= link.date.strftime("%Y-%m-%d") %>&nbsp;</span>
+    <% end %>
+    <a href="<%= link.url %>"><%= link.title %></a>
+  </li>
+<% end %>
+</ul>
