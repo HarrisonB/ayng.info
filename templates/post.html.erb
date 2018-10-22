@@ -1,14 +1,36 @@
 <div>
-<div>
-<% if title and date %>
-<span style="font-size:1.6em;display:block"><%= title %></span>
-<span style="display:block"><%= date.strftime("%b %d, %Y") %></span>
-<% elsif title %>
-<span style="font-size:1.6em;display:block"><%= title %></span>
-<% elsif date %>
-<span style="font-size:1.6em;display:block"><%= date.strftime("%b %d, %Y") %></span>
-<% end %>
+<% if date %>
+<div style="margin:12px 0">
+  <div>
+  <a href="/">home</a>
+  <% crumbs.each do |crumb| %>
+  &gt; <a href="<%= crumb.url %>"><%= crumb.name %></a>
+  <% end %>
+  </div>
+  <div>
+  <% if prev_post %>
+  <a href="<%= prev_post.url %>">&larr; prev</a>
+  <% else %>
+  <span style="color:gray">&larr; prev</span>
+  <% end %>
+  |
+  <% if next_post %>
+  <a href="<%= next_post.url %>">next &rarr;</a>
+  <% else %>
+  <span style="color:gray">next &rarr;</span>
+  <% end %>
+  </div>
 </div>
+<% end %>
+
+<% if title and date %>
+<div style="font-size:1.6rem"><%= title %></div>
+<div><%= date.strftime("%b %d, %Y") %></div>
+<% elsif title %>
+<div style="font-size:1.6rem"><%= title %></div>
+<% elsif date %>
+<div style="font-size:1.6rem"><%= date.strftime("%b %d, %Y") %></div>
+<% end %>
 <div>
 <%= content %>
 </div>

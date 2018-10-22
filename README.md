@@ -12,8 +12,8 @@
 
 ### TODO
 
+- ~~Navigation buttons/arrows (e.g. home, up, next, prev)~~
 - Check for dead links
-- Navigation buttons/arrows (e.g. home, up)
 - Sort posts newest to oldest
 - Show latest update of post
 - Optimize images if needed

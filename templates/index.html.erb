@@ -1,4 +1,10 @@
-<span style="font-size:1.6em;display:block"><%= dirname %></span>
+<div style="font-size:1.6rem">
+  <a href="/">home</a>
+  <% crumbs.each do |crumb| %>
+  &gt;
+  <a href="<%= crumb.url %>"><%= crumb.name %></a>
+  <% end %>
+</div>
 <ul style="list-style:none;padding-left:0">
 <% links.each do |link| %>
   <li>
